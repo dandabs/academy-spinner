@@ -4,14 +4,19 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main style="height: 100vh; width: 100vw; position: absolute;">
-    <img src="resources/images/outside.webp" usemap="#dojo" style="height: 100vh; width: 100vw; object-fit: cover;">
-    <map name="dojo">
-        <area shape="rect" onclick="openDoors()" coords="400,248,526,345" alt="doors" href="#">
-    </map>
+    <main id="intro" style="height: 100vh; width: 100vw; position: absolute;">
+      <img id="outside" src="resources/images/outside.webp" usemap="#dojo" style="height: 100vh; width: 100vw; object-fit: cover;">
+      
+      <video id="curtains" muted style="height: 100vh; width: 100vw; position: absolute;">
+          <source src="resources/videos/curtains.webm" type="video/webm">
+      </video>
+
+      <map name="dojo">
+          <area shape="rect" onclick="openDoors()" coords="400,248,526,345" alt="doors" href="#">
+      </map>
     </main>
 
-    <main style="visibility: hidden;">
+    <main id="main" style="visibility: hidden;">
       <div id="wheel">
         <div id="chart"></div>
         <div id="question"><h1></h1></div>
@@ -35,6 +40,17 @@
 
 <script>
     function openDoors() {
-        console.log("fsadfads");
+        document.getElementById("outside").remove();
+
+        document.getElementById("curtains").style.visibility = "visible";
+        document.getElementById("curtains").play();
+
+        new Audio("resources/audio/intro.mp3").play();
+
+        setTimeout(() => {
+            document.getElementById("curtains").remove();
+            document.getElementById("intro").remove();
+            document.getElementById("main").style.visibility = "visible";
+        }, 7000);
     }
 </script>
