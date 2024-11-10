@@ -21,16 +21,38 @@ text{
     font-size:11px;
     pointer-events:none;
 }
+
 #chart{
     width:500px;
     height:500px;
 }
+
 #question{
     width:400px;
 }
+
 #question h1{
     font-size: 50px;
     font-weight: bold;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center
+}
+
+#wheel {
+  float: left;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#scoreboard {
+  float: right;
+  width: 25%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
