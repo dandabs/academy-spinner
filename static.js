@@ -90,6 +90,13 @@ var padding = {top:20, right:40, bottom:0, left:0},
                         .text(data[picked].label);
                     oldrotation = rotation;
 
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { x: 0.5, y: 0.5 },
+                        colors: ['#ff0', '#0ff', '#f0f', '#0f0'] // You can customize the colors
+                    });
+
                     var audio = new Audio("audio/" + data[picked].value + '.mp3');
                     audio.play();
               
