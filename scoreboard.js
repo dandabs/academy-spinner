@@ -1,17 +1,31 @@
-var data = JSON.parse(localStorage.getItem("scoreboard"));
+var scoreboard_data = JSON.parse(localStorage.getItem("scoreboard"));
 
-if (data == null) {
-	data = {};
+if (scoreboard_data == null) {
+	scoreboard_data = {};
 }
 
-function load_scoreboard(names) {
+function loadScoreboard() {
+	names = [
+		"Aaron Millen",
+		"Connor Forde",
+		"Charlotte McKnight",
+		"Matthew Jordan",
+		"James Liam Butler",
+		"Dan Adams",
+		"Dylan McKenzie",
+		"Dylan Brânda"
+	]
+
+	console.log("Loading scoreboard");
 	var list = document.getElementById("scoreboard_list");
+
+	scoreboard_list.innerHTML = "";
 
 	for (var i = 0; i < names.length; i++) {
 		var name = names[i];
 
-		if (data[name] == undefined) {
-			data[name] = 0;
+		if (scoreboard_data[name] == undefined) {
+			scoreboard_data[name] = 0;
 		}
 	}
 
@@ -19,7 +33,7 @@ function load_scoreboard(names) {
 
 	for (var i = 0; i < names.length; i++) {
 		var name = names[i];
-		data_sorted.push([name, data[name]]);
+		data_sorted.push([name, scoreboard_data[name]]);
 	}
 
 	data_sorted.sort(function (a, b) {
@@ -27,23 +41,32 @@ function load_scoreboard(names) {
 	});
 
 	for (var i = 0; i < data_sorted.length; i++) {
-		add_scoreboard_entry(data_sorted[i][0], list, data);
+		addScoreboardEntry(data_sorted[i][0], list, scoreboard_data, i + 1);
+	}
+}
+
+function addScoreboardEntry(name, scoreboard_list, scoreboard_data, placement) {
+	placement_suffix = "th";
+
+	if (placement == 1) {
+		placement_suffix = "st";
+	} else if (placement == 2) {
+		placement_suffix = "nd";
+	} else if (placement == 3) {
+		placement_suffix = "rd";
 	}
 
-	localStorage.setItem("scoreboard", JSON.stringify(data));
+	scoreboard_list.innerHTML += `<li class="scoreboard-item">
+		<p>${placement}${placement_suffix}. ${name}</p>
+		<input type="text" id="${name}-scoreboard" value=${scoreboard_data[name]} oninput="saveData('${name}')" onfocusout="loadScoreboard()">
+	</li>`;
 }
 
-function add_scoreboard_entry(name, scoreboard_list, data) {
-	scoreboard_list.innerHTML += `<li>${name} - ${data[name]}</li>`;
+function saveData(name) {
+	elemtent = document.getElementById(`${name}-scoreboard`);
+	scoreboard_data[name] = parseInt(elemtent.value);
+
+	localStorage.setItem("scoreboard", JSON.stringify(scoreboard_data));
 }
 
-load_scoreboard([
-	"Aaron Millen",
-	"Connor Forde",
-	"Charlotte McKnight",
-	"Matthew Jordan",
-	"James Liam Butler",
-	"Dan Adams",
-	"Dylan McKenzie",
-	"Dylan Brânda"
-]);
+loadScoreboard();
