@@ -16,6 +16,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Space Grotesk";
+  margin: 0;
 }
 
 text {
