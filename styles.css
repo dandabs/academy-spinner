@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
 
 :root {
   --background: #ffffff;
@@ -15,11 +15,11 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
 }
 
 text {
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
   font-size: 12px;
   pointer-events: none;
 }
@@ -33,7 +33,7 @@ text {
 #question h1 {
   font-size: 50px;
   font-weight: bold;
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
   text-align: center;
 }
 
