@@ -10,7 +10,7 @@ name_labels = [
   "Charlotte McKnight",
   "Matthew Jordan",
   "James Liam Butler",
-  "Dan Adams",
+  "Daniel Adams",
   "Dylan McKenzie",
   "Dylan Brânda"
 ]

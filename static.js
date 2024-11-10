@@ -18,7 +18,7 @@ var data = [
     value: "dylan",
     pfp: "resources/images/dylan.png",
   },
-  { label: "Dan Adams", value: "dan", pfp: "resources/images/dan.png" },
+  { label: "Daniel Adams", value: "dan", pfp: "resources/images/dan.png" },
   {
     label: "Matthew Jordan",
     value: "matthew",
