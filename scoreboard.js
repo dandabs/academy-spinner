@@ -27,7 +27,6 @@ names = [
 ]
 
 function loadScoreboard() {
-	console.log("Loading scoreboard");
 	var list = document.getElementById("scoreboard_list");
 
 	scoreboard_list.innerHTML = "";
