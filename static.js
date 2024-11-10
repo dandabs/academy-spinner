@@ -1,4 +1,7 @@
-imageMapResize();
+window.addEventListener("load", (event) => {
+    console.log("page is fully loaded");
+    imageMapResize();
+});
 
 var padding = { top: 20, right: 40, bottom: 0, left: 0 },
   w = 500 - padding.left - padding.right,
