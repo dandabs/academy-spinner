@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+      "
+    >
+      <div id="chart"></div>
+      <div id="question"><h1></h1></div>
+    </main>
 
-<main style="display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column;">
-    <div id="chart"></div>
-    <div id="question"><h1></h1></div>
-</main>
+    <img id="imageCool" src="resources/images/GbR_u5SakAAETuf.png" />
 
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.js"></script>
-<script src="static.js"></script>
-
-</body>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.js"></script>
+    <script src="static.js"></script>
+  </body>
 </html>
