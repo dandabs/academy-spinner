@@ -7,7 +7,7 @@
     <main id="outdojo" style="height: 100vh; width: 100vw; position: absolute;">
       <img id="outside" src="resources/images/outside.webp" usemap="#dojo" style="height: 100vh; width: 100vw; object-fit: cover;">
       
-      <video id="curtains" muted style="height: 100vh; width: 100vw; position: absolute;">
+      <video id="curtains" muted style="height: 100vh; width: 100vw; position: absolute; display: none;">
           <source src="resources/videos/curtains.webm" type="video/webm">
       </video>
 
@@ -40,17 +40,17 @@
     function openDoors() {
         document.getElementById("outside").style.display = 'none';
 
-        document.getElementById("curtains").style.visibility = "visible";
+        document.getElementById("curtains").style.display = "block";
         document.getElementById("curtains").play();
 
         new Audio("resources/audio/intro.mp3").play();
 
         setTimeout(() => {
             document.getElementById("curtains").style.display = 'none'
+            document.getElementById("outdojo").style.display = 'none';
 
             document.getElementById("indojo").style.visibility = "visible";
             document.getElementById("indojo").style.display = 'block';
-            document.getElementById("outdojo").style.display = 'none';
         }, 7000);
     }
 </script>
