@@ -79,7 +79,7 @@ var padding = {top:20, right:40, bottom:0, left:0},
             }
             rotation += 90 - Math.round(ps/2);
             vis.transition()
-                .duration(3000)
+                .duration(5000)
                 .attrTween("transform", rotTween)
                 .each("end", function(){
                     //mark question as seen
@@ -105,7 +105,7 @@ var padding = {top:20, right:40, bottom:0, left:0},
             .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
             .append("path")
             .attr("d", "M-" + (r*.15) + ",0L0," + (r*.05) + "L0,-" + (r*.05) + "Z")
-            .style({"fill":"black"});
+            .style({"fill":"white"});
         //draw spin circle
         container.append("circle")
             .attr("cx", 0)
