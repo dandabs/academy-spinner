@@ -23,7 +23,7 @@ function load_scoreboard(names) {
 	}
 
 	data_sorted.sort(function(a, b) {
-		return b[1] - a[1];
+		return a[1] - b[1]; // Sort by reverse score
 	});
 
 	for (var i = 0; i < data_sorted.length; i++) {
