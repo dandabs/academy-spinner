@@ -4,25 +4,36 @@ if (scoreboard_data == null) {
 	scoreboard_data = {};
 }
 
-function loadScoreboard() {
-	names = [
-		"Aaron Millen",
-		"Connor Forde",
-		"Charlotte McKnight",
-		"Matthew Jordan",
-		"James Liam Butler",
-		"Dan Adams",
-		"Dylan McKenzie",
-		"Dylan Brânda"
-	]
+name_labels = [
+	"Aaron Millen",
+	"Connor Forde",
+	"Charlotte McKnight",
+	"Matthew Jordan",
+	"James Liam Butler",
+	"Dan Adams",
+	"Dylan McKenzie",
+	"Dylan Brânda"
+]
 
+names = [
+	"aaron",
+	"branda",
+	"charlotte",
+	"connor",
+	"dan",
+	"dylan",
+	"james",
+	"matthew"
+]
+
+function loadScoreboard() {
 	console.log("Loading scoreboard");
 	var list = document.getElementById("scoreboard_list");
 
 	scoreboard_list.innerHTML = "";
 
-	for (var i = 0; i < names.length; i++) {
-		var name = names[i];
+	for (var i = 0; i < name_labels.length; i++) {
+		var name = name_labels[i];
 
 		if (scoreboard_data[name] == undefined) {
 			scoreboard_data[name] = 0;
@@ -31,8 +42,8 @@ function loadScoreboard() {
 
 	data_sorted = [];
 
-	for (var i = 0; i < names.length; i++) {
-		var name = names[i];
+	for (var i = 0; i < name_labels.length; i++) {
+		var name = name_labels[i];
 		data_sorted.push([name, scoreboard_data[name]]);
 	}
 
@@ -67,6 +78,14 @@ function saveData(name) {
 	scoreboard_data[name] = parseInt(elemtent.value);
 
 	localStorage.setItem("scoreboard", JSON.stringify(scoreboard_data));
+	playRandomAudio();
+}
+
+function playRandomAudio() {
+	random_name = names[Math.floor(Math.random() * names.length)];
+
+	var audio = new Audio(`resources/audio/${random_name}.mp3`);
+	audio.play();
 }
 
 loadScoreboard();
