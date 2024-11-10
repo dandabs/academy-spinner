@@ -6,7 +6,7 @@ if (data == null) {
 
 function load_scoreboard(names) {
 	var list = document.getElementById("scoreboard_list");
-	
+
 	for (var i = 0; i < names.length; i++) {
 		var name = names[i];
 
@@ -22,7 +22,7 @@ function load_scoreboard(names) {
 		data_sorted.push([name, data[name]]);
 	}
 
-	data_sorted.sort(function(a, b) {
+	data_sorted.sort(function (a, b) {
 		return a[1] - b[1]; // Sort by reverse score
 	});
 
@@ -37,4 +37,13 @@ function add_scoreboard_entry(name, scoreboard_list, data) {
 	scoreboard_list.innerHTML += `<li>${name} - ${data[name]}</li>`;
 }
 
-load_scoreboard(["Aaron Millen", "Connor Forde", "Charlotte McKnight", "Matthew Jordan", "James Liam Butler", "Dan Adams", "Dylan McKenzie", "Dylan Brânda"]);
+load_scoreboard([
+	"Aaron Millen",
+	"Connor Forde",
+	"Charlotte McKnight",
+	"Matthew Jordan",
+	"James Liam Butler",
+	"Dan Adams",
+	"Dylan McKenzie",
+	"Dylan Brânda"
+]);
