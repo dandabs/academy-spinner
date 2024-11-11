@@ -115,6 +115,10 @@ imageCool.addEventListener("animationend", function () {
 
 function spin(d) {
   container.on("click", null);
+
+  var audio = new Audio("resources/audio/gong.mp3");
+audio.play();
+
   //all slices have been seen, all done
   if (oldpick.length == data.length) {
     container.on("click", null);
