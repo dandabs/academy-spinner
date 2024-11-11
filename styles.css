@@ -2,7 +2,7 @@
 
 :root {
   --background: #0a0a0a;
-  --foreground: #171717;
+  --foreground: #ededed;
 }
 
 body {
@@ -26,6 +26,7 @@ text {
 
 #question {
   width: 400px;
+  background: rgba(0,0,0,0.6);
 }
 
 #question h1 {
@@ -84,6 +85,7 @@ text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: rgba(0,0,0,0.6);
 }
 
 .scoreboard-item {
