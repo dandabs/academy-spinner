@@ -6,7 +6,7 @@
   <body>
     <main id="outdojo" style="height: 100vh; width: 100vw; position: absolute;">
 
-      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGppMGFlZmZsbXJpamd6NmdwdThzaTk5Z3kxbjZkaGJ1Nzl3eWo3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5qFQhjlNmi69wpS5j6/giphy.webp" style="position: absolute; height: 200px; width: 200px; top: 0; right: 0; z-index: 100;" />
+      <img id="soundgif" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGppMGFlZmZsbXJpamd6NmdwdThzaTk5Z3kxbjZkaGJ1Nzl3eWo3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5qFQhjlNmi69wpS5j6/giphy.webp" style="position: absolute; height: 200px; width: 200px; top: 0; right: 0; z-index: 100;" />
       
       <img id="outside" src="resources/images/outside.webp" usemap="#dojo" style="height: 100vh; width: 100vw; object-fit: cover;">
       
@@ -42,6 +42,7 @@
     <script>
     function openDoors() {
         document.getElementById("outside").style.display = 'none';
+        document.getElementById("soundgif").style.display = 'none';
 
         document.getElementById("curtains").style.display = "block";
         document.getElementById("curtains").play();
