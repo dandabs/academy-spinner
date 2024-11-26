@@ -16,6 +16,46 @@
     <link rel="preload" href="resources/images/matthew.png" as="image" type="image/png" />
   </head>
   <body>
+    <main id="indojo" style="display: none; background-image: url('./resources/images/dojo.png'); background-size: cover; height: 100vh; width: 100vw;">
+      <div id="wheel">
+        <div id="chart"></div>
+        <div id="question"><h1></h1></div>
+      </div>
+      <div id="scoreboard">
+        <h1>Scoreboard</h1>
+        <ul id="scoreboard_list">
+        </ul>
+      </div>
+    </main>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/davidjbradshaw/imagemap-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+    <script src="static.js" defer></script>
+    <script src="scoreboard.js"></script>
+
+    <img id="imageCool" src="resources/images/GbR_u5SakAAETuf.png" />
+
+    <script>
+        function openDoors() {
+            document.getElementById("outside").style.display = 'none';
+            document.getElementById("soundgif").style.display = 'none';
+    
+            document.getElementById("curtains").style.display = "block";
+            document.getElementById("curtains").play();
+    
+            new Audio("resources/audio/intro.mp3").play();
+    
+            setTimeout(() => {
+                document.getElementById("curtains").style.display = 'none'
+                document.getElementById("outdojo").style.display = 'none';
+    
+                document.getElementById("indojo").style.visibility = "visible";
+                document.getElementById("indojo").style.display = 'block';
+            }, 7000);
+        }
+    </script>
+
     <main id="outdojo" style="height: 100vh; width: 100vw; position: absolute;">
 
       <img id="soundgif" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGppMGFlZmZsbXJpamd6NmdwdThzaTk5Z3kxbjZkaGJ1Nzl3eWo3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5qFQhjlNmi69wpS5j6/giphy.webp" style="position: absolute; height: 200px; width: 200px; top: 0; right: 0; z-index: 100;" />
@@ -30,45 +70,5 @@
           <area shape="rect" onclick="openDoors()" coords="400,248,526,345" alt="doors" href="#">
       </map>
     </main>
-
-    <main id="indojo" style="display: none; background-image: url('./resources/images/dojo.png'); background-size: cover; height: 100vh; width: 100vw;">
-      <div id="wheel">
-        <div id="chart"></div>
-        <div id="question"><h1></h1></div>
-      </div>
-      <div id="scoreboard">
-        <h1>Scoreboard</h1>
-        <ul id="scoreboard_list">
-        </ul>
-      </div>
-    </main>
-
-    <img id="imageCool" src="resources/images/GbR_u5SakAAETuf.png" />
-
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/davidjbradshaw/imagemap-resizer@1.0.10/js/imageMapResizer.min.js"></script>
-    <script src="static.js" defer></script>
-    <script src="scoreboard.js"></script>
-
-    <script>
-    function openDoors() {
-        document.getElementById("outside").style.display = 'none';
-        document.getElementById("soundgif").style.display = 'none';
-
-        document.getElementById("curtains").style.display = "block";
-        document.getElementById("curtains").play();
-
-        new Audio("resources/audio/intro.mp3").play();
-
-        setTimeout(() => {
-            document.getElementById("curtains").style.display = 'none'
-            document.getElementById("outdojo").style.display = 'none';
-
-            document.getElementById("indojo").style.visibility = "visible";
-            document.getElementById("indojo").style.display = 'block';
-        }, 7000);
-    }
-</script>
   </body>
 </html>
